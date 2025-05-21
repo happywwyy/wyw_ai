@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电商APP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF0000',
+                        secondary: '#FF6B6B'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '2px',
+                        DEFAULT: '4px',
+                        'md': '8px',
+                        'lg': '12px',
+                        'xl': '16px',
+                        '2xl': '20px',
+                        '3xl': '24px',
+                        'full': '9999px',
+                        'button': '4px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            min-height: 1024px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        .search-input::-webkit-input-placeholder {
+            color: #999;
+        }
+        .nav-item.active {
+            color: #FF0000;
+        }
+        .nav-item.active i {
+            color: #FF0000;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="relative min-h-screen pb-16">
+        <header class="bg-primary py-4 px-4">
+            <div class="flex items-center justify-between">
+                <div class="text-white text-2xl font-['Pacifico']">logo</div>
+                <div class="flex-1 mx-4">
+                    <div class="relative">
+                        <input type="text" class="w-full py-2 px-4 pl-10 rounded-full bg-white text-sm" placeholder="搜索商品">
+                        <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <button class="text-white"><i class="fas fa-bell text-xl"></i></button>
+                    <button class="text-white"><i class="fas fa-shopping-cart text-xl"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <div class="px-4 py-4">
+            <div class="grid grid-cols-5 gap-4 mb-6">
+                <div class="text-center">
+                    <div class="w-full aspect-square rounded-lg bg-white shadow-sm overflow-hidden">
+                        <img src="https://ai-public.mastergo.com/ai/img_res/1c1d97edb2f5f6a1f957611d95877a6f.jpg" class="w-full h-full object-cover" />
+                    </div>
+                    <p class="mt-2 text-sm">数码产品</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-full aspect-square rounded-lg bg-white shadow-sm overflow-hidden">
+                        <img src="https://ai-public.mastergo.com/ai/img_res/97618d680d6d31c413eabfc687d3844e.jpg" class="w-full h-full object-cover" />
+                    </div>
+                    <p class="mt-2 text-sm">时尚服饰</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-full aspect-square rounded-lg bg-white shadow-sm overflow-hidden">
+                        <img src="https://ai-public.mastergo.com/ai/img_res/344133aa0384530c8c142da5440cbcb9.jpg" class="w-full h-full object-cover" />
+                    </div>
+                    <p class="mt-2 text-sm">美妆护肤</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-full aspect-square rounded-lg bg-white shadow-sm overflow-hidden">
+                        <img src="https://ai-public.mastergo.com/ai/img_res/c2b012ca990e64016c16df59af960ff4.jpg" class="w-full h-full object-cover" />
+                    </div>
+                    <p class="mt-2 text-sm">生鲜食品</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-full aspect-square rounded-lg bg-white shadow-sm overflow-hidden">
+                        <img src="https://ai-public.mastergo.com/ai/img_res/b69d2c0ca1c2ff51f2f44433f481c0ec.jpg" class="w-full h-full object-cover" />
+                    </div>
+                    <p class="mt-2 text-sm">家用电器</p>
+                </div>
+            </div>
+            <div class="mb-6">
+                <h2 class="text-xl font-bold mb-4">限时秒杀</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-lg p-3 shadow-sm">
+                        <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                            <img src="https://ai-public.mastergo.com/ai/img_res/209cc5aa020b1026a717f07e46572d1a.jpg" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="font-medium mb-1">iPhone 14 Pro Max</h3>
+                        <p class="text-gray-500 text-sm mb-2">256GB 暗夜紫色</p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-primary font-bold text-xl">¥ 7999</div>
+                            <div class="text-gray-400 text-sm line-through">¥ 8999</div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 shadow-sm">
+                        <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                            <img src="https://ai-public.mastergo.com/ai/img_res/9c2d97439d7961c698afeb9cfdbe8b1c.jpg" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="font-medium mb-1">AirPods Pro 2</h3>
+                        <p class="text-gray-500 text-sm mb-2">主动降噪 无线充电</p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-primary font-bold text-xl">¥ 1699</div>
+                            <div class="text-gray-400 text-sm line-through">¥ 1999</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-xl font-bold mb-4">热门推荐</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-lg p-3 shadow-sm">
+                        <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                            <img src="https://ai-public.mastergo.com/ai/img_res/bf1343379460e8af9543568cf2ba98ef.jpg" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="font-medium mb-1">MacBook Air M2</h3>
+                        <p class="text-gray-500 text-sm mb-2">8GB+256GB 深空灰</p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-primary font-bold text-xl">¥ 9299</div>
+                            <div class="text-sm text-gray-500">已售 2.3 万件</div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 shadow-sm">
+                        <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                            <img src="https://ai-public.mastergo.com/ai/img_res/656063bd87d0ef4f0aafc1f24afce153.jpg" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="font-medium mb-1">Apple Watch Series 8</h3>
+                        <p class="text-gray-500 text-sm mb-2">GPS 45mm 午夜色</p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-primary font-bold text-xl">¥ 3199</div>
+                            <div class="text-sm text-gray-500">已售 1.8 万件</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-xl font-bold mb-4">猜你喜欢</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-lg p-3 shadow-sm">
+                        <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                            <img src="https://ai-public.mastergo.com/ai/img_res/058ad0c4e03eed65bd27b2d5c1a10b0a.jpg" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="font-medium mb-1">iPad Air 5</h3>
+                        <p class="text-gray-500 text-sm mb-2">WiFi 64GB 银色</p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-primary font-bold text-xl">¥ 4199</div>
+                            <div class="text-sm text-gray-500">已售 1.5 万件</div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg p-3 shadow-sm">
+                        <div class="aspect-[4/3] rounded-lg overflow-hidden mb-3">
+                            <img src="https://ai-public.mastergo.com/ai/img_res/140e759ea9a5fe361fbc6c93fbf576b0.jpg" class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="font-medium mb-1">MagSafe 充电器</h3>
+                        <p class="text-gray-500 text-sm mb-2">15W 快速充电</p>
+                        <div class="flex items-center justify-between">
+                            <div class="text-primary font-bold text-xl">¥ 329</div>
+                            <div class="text-sm text-gray-500">已售 3.2 万件</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-2 max-w-[1440px] mx-auto">
+            <div class="grid grid-cols-5 gap-2">
+                <a href="#" class="nav-item active flex flex-col items-center">
+                    <i class="fas fa-home text-xl mb-1"></i>
+                    <span class="text-xs">首页</span>
+                </a>
+                <a href="#" class="nav-item flex flex-col items-center text-gray-400">
+                    <i class="fas fa-play text-xl mb-1"></i>
+                    <span class="text-xs">视频</span>
+                </a>
+                <a href="#" class="nav-item flex flex-col items-center text-gray-400">
+                    <i class="fas fa-comment text-xl mb-1"></i>
+                    <span class="text-xs">消息</span>
+                </a>
+                <a href="#" class="nav-item flex flex-col items-center text-gray-400">
+                    <i class="fas fa-shopping-bag text-xl mb-1"></i>
+                    <span class="text-xs">购物</span>
+                </a>
+                <a href="#" class="nav-item flex flex-col items-center text-gray-400">
+                    <i class="fas fa-user text-xl mb-1"></i>
+                    <span class="text-xs">我的</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>
