@@ -12,7 +12,7 @@
     .tm-page
 - Element 概念
     元素  __header
-        块__
+         块__
     同一块中概念不重叠
     .weui-page__title
     .weui-page__desc
