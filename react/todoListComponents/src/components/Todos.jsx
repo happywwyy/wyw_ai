@@ -1,17 +1,16 @@
 // 列表的渲染
 function Todos(props) {
-  // 如何拿父组件传过来的数据状态呢？ 传参
-  console.log(props, '////')
+  // 父组件传过来的数据状态呢？传参
+  console.log(props, '/////')
   const todos = props.todos
   return (
-    <ul>
+      <ul>
       {
-        todos.map(todo => (
-          <li key={todo.id}>{todo.text}</li>
-        ))
+          todos.map(todo => (
+              <li key={todo.id}>{todo.text}</li>
+          ))
       }
-    </ul>
+      </ul>
   )
 }
-
 export default Todos
