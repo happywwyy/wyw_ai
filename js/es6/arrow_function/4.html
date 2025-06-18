@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>call apply bind 霸道一些，指定函数内部的this</title>
+</head>
+<body>
+  <script>
+    var a = {
+      name: "武依微",
+      func1: function() {
+        console.log(this.name)
+      },
+      func2: function() {
+        setTimeout(function () {
+          // 假如this 可以被指定？
+          this.func1()
+        }.apply(a), 1000) 
+      }
+
+      // func2: function() {
+      //   console.log(this)
+      //   // 作用域链 ？？？
+      //   setTimeout(() => {
+      //     // 没有this, arguments 都没有
+      //     this.fun1()
+      //   }, 1000)
+      // }
+
+      // func2: function () {
+      //   // this 的丢失 此时可以采用作用域链解决
+      //   var that = this
+      //   setTimeout(function() {
+      //     // console.log(this)
+      //     that.func1();
+      //   }, 1000)
+      // }
+    }
+    a.func2() // 输出undefined，因为setTimeout是一个普通函数，this指向window
+  </script>
+</body>
+</html>
