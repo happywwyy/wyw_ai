@@ -4,6 +4,6 @@
 .input {
   width: 200px;
 }
-.preview img {
+.imgPreview{
   max-width: 100%;
 }

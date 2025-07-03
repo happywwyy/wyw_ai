@@ -17,6 +17,12 @@
   不同的项目中，重复去安装了react
   react 等包放到一个地方，如果之前安装过，链接过，只安装一次
 
+## react 语法
+- 单向数据流
+  数据状态流动
+    - 父组件负责提供数据，和api 接口请求
+    - 拆成多个子组件，数据或从父组件流向子组件
+    - 子组件负责消费
 ## 项目中一定要安排的技能点
 - pnpm
 - react 思想
@@ -28,7 +34,14 @@
   - 图片上传
     - 图片预览
 - 组件化设计
+  - App
+    - 提供数据
+    - 图片上传大模型
   - PictureCard
+  单向数据流
+    - 子组件只负责消费数据
+    - 父组件负责提供数据，数据的请求
+    - 先要给父组件 
 - 性能优化
   - linear-gradient 代替图片做背景
 - 用户体验
@@ -39,3 +52,31 @@
   - 可选链操作符
 - html5 功能
   - file 文件对象 
+- 智能
+  - 多模态模型
+    ？ 像月之暗面大模型 base64 
+    prompt？
+  - prompt LLM交流
+    - 给它一个明确的身份 LLM交流 当人
+    - 清晰且具体的任务
+    - 限制，指定结果
+      返回的结构 JSON
+      有利于接下来的业务执行
+      拿着大模型的回答，接着干活
+      JSON 最好的接口格式
+    - 分步做
+
+    "{
+  "image_discription": "The image depicts a stylized illustration of a dragon with a prominent red and white color scheme. The dragon is fierce and appears to be in motion, with its scales, claws, and facial features detailed in a dynamic and artistic manner.",
+  "representative_word": "dragon",
+  "example_sentence": "The dragon in the story was known for its wisdom and power.",
+  "explaination": "Look at the image.\nYou can see a large, mythical creature.\nThis creature is called a dragon.\nDragons are often depicted as powerful and magical beings in stories and legends.\nThey are usually shown with scales, claws, and sometimes wings.\nDo you know any stories that feature dragons?",
+  "explaination_replys": ["Yes, I've read 'Game of Thrones' which has dragons.", "I watched 'How to Train Your Dragon', it's a fun movie about dragons."]
+}
+"
+
+## 前端为什么要搞AI
+- 时代的需求和趋势
+- vibe coding 提升了开发效率 trae cursor
+- LLM的发展，产品需要更多更好的智能体验
+  用户体验是前端的职责，智能前端工程师的新角色中
