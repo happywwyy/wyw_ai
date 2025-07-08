@@ -1,13 +1,31 @@
 import {
   useState // 私有状态
 }from 'react'
-const TodoForm = () => {
+const TodoForm = ({onAddTodo}) => {
+  // const { onAddTodo } = props
+  // 都是数据
+  // props 参数数据
+  // state 私有的数据
+  // 单向数据流
+  const [text, setText] = useState('')
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    let result = text.trim()
+    if (!result) return;
+    onAddTodo(result)
+    setText('') // 用户体验 数据状态和界面状态一致要敏感
+  }
   // JSX 一定得有唯一的最外层元素 树来编译解析JSX，
   return (
     <div>
       <h1 className='header'>TodoList</h1>
-      <form>
-
+      <form className='todo-input' onSubmit={handleSubmit}>
+        <input
+          type="text" 
+          value={text}
+          onChange={e => setText(e.target.value)}
+          placeholder='text'
+        />
       </form>
     </div>  
     
