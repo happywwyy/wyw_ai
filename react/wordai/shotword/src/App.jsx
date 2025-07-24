@@ -62,6 +62,8 @@ function App() {
     const replyData = JSON.parse(data.choices[0].message.content);
     setWord(replyData.representative_word);
     setSentence(replyData.example_sentence);
+    setExplainations(replyData.explaination.split('\n'))
+    setExpReply(replyData.explaination_replys)
 
     const audioUrl = await generateAudio(replay.example_sentence)
   }

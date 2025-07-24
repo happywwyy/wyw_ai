@@ -38,10 +38,10 @@ function App() {
     const response = await fetch(
       endpoint,
       {
-        method: 'POST',
+        method:'POST',
         headers, // es6中 JSON key value 一样可以省略
         body: JSON.stringify({
-          model: 'moonshot-v1-8k-vision-preview',
+          model:'moonshot-v1-8k-vision-preview',
           messages: [
             {
               role: 'user',
@@ -64,14 +64,14 @@ function App() {
     )
     // 二进制字节流 json 也是异步的
     const data = await response.json()
-    setContent(data.choices[0].message.content)
+    setContent(data.choices[0].message.cente)
   }
   return (
     <div className="container">
       <div>
         <label htmlFor="fileInput">文件：</label>
-        <input
-          type="file"
+        <input 
+          type="file" 
           id="fileInput"
           className="input"
           accept=".jpeg,.jpg,.png,.gif"
@@ -81,7 +81,7 @@ function App() {
       </div>
       <div className="output">
         <div className="preview">
-          {
+          { 
             imgBase64Data && <img src={imgBase64Data} alt="" />
           }
         </div>
