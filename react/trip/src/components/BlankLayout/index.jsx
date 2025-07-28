@@ -1,12 +1,10 @@
 import {
   Outlet
 } from 'react-router-dom'
-
 const BlankLayout = () => {
   return (
       <>
-        <Outlet />
-        BlankLayout
+          <Outlet />
       </>
   )
 }
