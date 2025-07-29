@@ -10,7 +10,7 @@ import {
 } from 'react-router-dom'
 import MainLayout from '@/components/MainLayout'
 import BlankLayout from '@/components/BlankLayout'
-import Loading from '@/components/Loading'
+import Loading from '@/components/Loading';
 
 const Home = lazy(() => import('@/pages/Home'));
 const Discount = lazy(() => import('@/pages/Discount'));
@@ -18,12 +18,13 @@ const Collection = lazy(() => import('@/pages/Collection'));
 const Trip = lazy(() => import('@/pages/Trip'));
 const Account = lazy(() => import('@/pages/Account'));
 const Search = lazy(() => import('@/pages/Search'));
+const Detail = lazy(() => import('@/pages/Detail'));
+
 
 function App() {
 
   return (
     <>
-      <Loading />
       <Suspense fallback={<Loading />}>
         {/* 带有tabbar的Layout */}
         <Routes >
@@ -38,6 +39,7 @@ function App() {
           {/* 空的Layout */}
           <Route element={<BlankLayout />}>
             <Route path="/search" element={<Search />}/>
+            <Route path="/detail/:id" element={<Detail />} />
           </Route>
         </Routes>
       </Suspense>

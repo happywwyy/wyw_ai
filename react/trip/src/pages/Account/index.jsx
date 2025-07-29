@@ -15,14 +15,33 @@ import {
     FriendsO,
     StarO,
     SettingO,
-    UserCircleO
+    UserCircleO,
+    AddO,
+    CartO,
+    ChatO,
+    FireO,
+    LikeO,
+    Search,
+    HomeO,
+    UserO
 } from '@react-vant/icons'
 import styles from './account.module.css';
 import {
-  generateAvatar
-} from '@/llm'
+    generateAvatar
+} from '@/llm';
 
 const Account = () => {
+    const gridData = [
+        { icon: <AddO />, text: '添加' },
+        { icon: <CartO />, text: '购物车' },
+        { icon: <ChatO />, text: '聊天' },
+        { icon: <FireO />, text: '热门' },
+        { icon: <LikeO />, text: '喜欢' },
+        { icon: <StarO />, text: '收藏' },
+        { icon: <Search />, text: '搜索' },
+        { icon: <HomeO />, text: '首页' },
+        { icon: <UserO />, text: '我的' }
+    ];
     const [userInfo, setUserInfo] = useState({
         nickname: '奶龙',
         level: '5级',
@@ -34,27 +53,28 @@ const Account = () => {
     const handleAction = async (e) => {
         console.log(e)
         if (e.type === 1) {
-          // AI 生成头像
-          const text = `
-            昵称：${userInfo.nickname}
-            slogan: ${userInfo.slogan}
-          `
-          const newAvatar = await generateAvatar(text)
+        // AI 生成头像
+            const text = `
+                昵称: ${userInfo.nickname}
+                slogan: ${userInfo.slogan}
+            `;
+            const newAvatar = await generateAvatar(text);
         } else if (e.type === 2) {
-          // 图片上传
+        // 图片上传
         }
     }
     const actions = [
-      {
-        name: 'AI生成头像',
-        color: '#123123',
-        type: 1
-      },
-      {
-        name: '上传头像',
-        color: '#ee0a24',
-        type: 1
-      },
+        {
+            name: 'AI生成头像',
+            color: '#123123',
+            type: 1
+        },
+        {
+            name: '上传头像',
+            color: '#ee0a24',
+            type: 2
+        }
+
     ]
     return (
         <div className={styles.container}>
@@ -95,6 +115,16 @@ const Account = () => {
             >
 
             </ActionSheet>
+            <div className={styles.gridContainer}>
+                {
+                    gridData.map((item, index) => (
+                        <div key={index} className={styles.gridItem}>
+                            <div className={styles.icon}>{item.icon}</div>
+                            <div className={styles.text}>{item.text}</div>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     )
 }
