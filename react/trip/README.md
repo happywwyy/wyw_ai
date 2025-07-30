@@ -124,6 +124,16 @@ ReadMe.md 很重要 方便面试官
     - api 
         GoogleSuggest
     - localStorage
+- 瀑布流 
+    - 小红书等主流App的内容浏览用户体验产品
+        两列、图片高度不一致、落差感
+        滚动加载更多，图片懒加载
+    - 接口
+        /api/images?page=${n} 支持翻页
+        唯一id  page + index 
+        随机图片， 高度随机
+    - images 怎么放到两列中？ MVVM
+    数据驱动界面（2列） 奇偶
     
 ## 项目亮点和难点
 - 前端智能
@@ -143,14 +153,13 @@ ReadMe.md 很重要 方便面试官
         元素的样式就可以由这些原子类组合而成
         样式复用的更好，以后几乎可以不用写样式  
 - 用户体验优化
-    - 搜索建议，防抖+useMemo 性能优化
+    - 搜索建议， 防抖+useMemo 性能优化
     - 组件粒度划分 
-        React.memo + useCallback 
-    - 懒加载 
-    - 热门推荐 + 相关商品（产品）
+        React.memo + ueCallback 
+    - 懒加载
+    - 热门推荐 + 相关商品 （产品）
     - SPA
-    - 骨架屏 不用让用户等待了
-
+    - 骨架屏 不用让用户等待了 
 ## 项目遇到过什么问题， 怎么解决的
 - chat messages 遇到message 覆盖问题 
 - 闭包陷阱问题 
