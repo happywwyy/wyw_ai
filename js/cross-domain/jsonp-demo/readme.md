@@ -1,0 +1,9 @@
+# 封装的JSONP
+
+- 只能解决GET 请求的跨域问题
+    http://localhost:3000/say?callback=biaobaiCallback&wd=ilikeyou
+- 需要后端配合，改变后端输出的方式
+    后端的输出的方式要加上padding
+- 不太安全
+    全局挂载了show callback函数 容易被黑客利用
+    
