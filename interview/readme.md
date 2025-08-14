@@ -1,0 +1,11 @@
+# 秋招面试
+
+## JS
+- Object.assign
+- 深浅拷贝
+- ”=“ 的意义 与 JS 内存相关
+拷贝（简单数据类型 复印了一份） 和 引用式赋值
+
+- 响应式底层
+    - Object.defineProperty()
+    - Proxy
